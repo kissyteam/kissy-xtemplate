@@ -25,7 +25,10 @@
     },
     "dependencies": {
         "iconv-lite": ">=0.1.0",
-        "colors": ">=0.6.0-1"
+        "colors": ">=0.6.0-1",
+        "js-beautify": "~1.4.0",
+        "mkdirp": "",
+        "lodash": ""
     },
     "devDependencies": {
         "mocha": "~1.4.1",
