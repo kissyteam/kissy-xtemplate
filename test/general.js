@@ -12,7 +12,7 @@ var XTemplate = require('../index');
 describe('config', function(){
 
     describe('When version was not found', function(){
-        it('should throw error.', function(){
+        it('should throw error', function(){
             var hasError = false;
             try{
                 new XTemplate({
@@ -26,7 +26,7 @@ describe('config', function(){
     });
 
     describe('When version was not specified', function(){
-        it('should use 1.4.1 as default.', function(){
+        it('should use 1.4.1 as default', function(){
             new XTemplate().cfg.version.should.equal('1.4.1');
         });
     });
