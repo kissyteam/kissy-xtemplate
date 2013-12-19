@@ -29,8 +29,8 @@ describe('compile', function(){
         });
 
         it('should have proper file content generated', function(){
-            fs.readFileSync(destA).should.equal(fs.readFileSync(path.resolve(expectedPath, './a-xtpl.js')));
-            fs.readFileSync(destB).should.equal(fs.readFileSync(path.resolve(expectedPath, './b-xtpl.js')));
+            fs.readFileSync(destA).toString().should.equal(fs.readFileSync(path.resolve(expectedPath, './a-xtpl.js')).toString());
+            fs.readFileSync(destB).toString().should.equal(fs.readFileSync(path.resolve(expectedPath, './b-xtpl.js')).toString());
         });
     });
 
