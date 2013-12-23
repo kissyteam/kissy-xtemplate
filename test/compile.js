@@ -14,6 +14,20 @@ var srcPath = path.resolve(__dirname, './src');
 var destPath = path.resolve(__dirname, './dest');
 var expectedPath = path.resolve(__dirname, './expected');
 
+function removeDistDir(){
+    if(fs.existsSync(destPath)){
+        utils.rmdirsSync(destPath);
+    }
+}
+
+before(function(){
+    removeDistDir();
+});
+
+after(function(){
+    removeDistDir();
+});
+
 describe('compile', function(){
 
     var compiler = new XTemplate();
