@@ -16,7 +16,7 @@ var expectedPath = path.resolve(__dirname, './expected');
 
 function removeDistDir(){
     if(fs.existsSync(destPath)){
-        utils.rmdirsSync(destPath);
+        fs.rmdirSync(destPath);
     }
 }
 
