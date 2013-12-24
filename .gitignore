@@ -9,6 +9,7 @@ lib-cov
 *.iml
 *.ipr
 
+.DS_Store
 .idea
 pids
 logs

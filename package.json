@@ -28,11 +28,15 @@
         "colors": ">=0.6.0-1",
         "js-beautify": "~1.4.0",
         "mkdirp": "",
-        "lodash": ""
+        "lodash": "",
+        "commander": ""
     },
     "devDependencies": {
         "mocha": "~1.4.1",
         "should": "~0.6.3"
+    },
+    "bin": {
+        "xtemplate": "./bin/xtemplate"
     },
     "scripts": {
         "test": "mocha"

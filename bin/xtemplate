@@ -1,0 +1,31 @@
+#!/usr/bin/env node
+
+var program = require('commander');
+var pkgInfo = require('../package.json');
+var XTemplate = require('../index');
+
+program
+  .version(pkgInfo.version)
+  .option('-p, --package <package name>', 'config packages')
+  .option('-i, --inputCharset <charset>', 'input charset')
+  .option('-o, --outputCharset <charset>', 'output charset')
+  .option('-v, --ver <version>', 'specify the version of KISSY')
+  .parse(process.argv);
+
+var files = program.args;
+
+if(!files.length){
+	console.log('no input file or dir specified.');
+}else{
+	var src;
+	var dest;
+	if(files.length > 1){
+		dest = files[files.length - 1];
+		src = files.slice(0, -1);
+	}else{
+		src = files[0];
+	}
+	new XTemplate({
+		version: program.ver
+	}).compile(src, dest);
+}
