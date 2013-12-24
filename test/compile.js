@@ -8,6 +8,7 @@
 var fs = require('fs');
 var path = require('path');
 var should = require('should');
+var fileUtils = require('../lib/file-utils');
 
 var XTemplate = require('../index');
 var srcPath = path.resolve(__dirname, './src');
@@ -16,13 +17,13 @@ var expectedPath = path.resolve(__dirname, './expected');
 
 function removeDistDir(){
     if(fs.existsSync(destPath)){
-        fs.rmdirSync(destPath);
+        fileUtils.rmdirsSync(destPath);
     }
 }
 
-before(function(){
-    removeDistDir();
-});
+//before(function(){
+//    removeDistDir();
+//});
 
 after(function(){
     removeDistDir();
