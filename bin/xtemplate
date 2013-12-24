@@ -6,6 +6,7 @@ var XTemplate = require('../index');
 
 program
   .version(pkgInfo.version)
+  .usage('[options] <file ...> <dest>')
   .option('-p, --package <package name>', 'config packages')
   .option('-i, --inputCharset <charset>', 'input charset')
   .option('-o, --outputCharset <charset>', 'output charset')
@@ -15,7 +16,7 @@ program
 var files = program.args;
 
 if(!files.length){
-	console.log('no input file or dir specified.');
+	program.help();
 }else{
 	var src;
 	var dest;
