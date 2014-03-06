@@ -26,8 +26,8 @@ describe('config', function(){
     });
 
     describe('When version was not specified', function(){
-        it('should use 1.4.1 as default', function(){
-            new XTemplate().cfg.version.should.equal('1.4.1');
+        it('should use 1.4.2 as default', function(){
+            new XTemplate().cfg.version.should.equal('1.4.2');
         });
     });
 });
