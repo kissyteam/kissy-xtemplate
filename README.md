@@ -21,7 +21,21 @@ new XTemplate().compile('xxx.xtpl.html', 'xxx.xtpl.js');
 ```
 
 ### shell
-sorry, the shell version is under development.
+
+to use shell version, you'd better install it using `-g`
+
 ```
-npm install kissy-xtemplate
+npm install kissy-xtemplate -g
+```
+
+then, you can compile using `xtemplate` bin.
+
+```
+xtemplate a.xtpl.html a.js
+```
+
+for more information, please refer to help.
+
+```
+xtemplate -h
 ```
