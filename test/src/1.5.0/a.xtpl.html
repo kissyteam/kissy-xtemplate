@@ -1,0 +1,142 @@
+<div id="J_Item_{{cartId}}" class="J_ItemBody item-body clearfix item-{{type}} {{#if (services)}}item-with-services{{/if}} {{#if (isFirstOne)}}first-item{{/if}} {{#if (isLastOne)}} last-item {{/if}} {{#if (isValid===false && type!==" ju11")}} item-invalid {{/if}} {{#if (model && model.isSelected)}} selected item-selected {{/if}}">
+<div class="item-content table">
+    <div class="td td-chk">
+        <div class="td-inner">
+            {{@if (isValid)}}
+            {{@if (type==="combo" || orderType==="combo")}}
+            {{else}}
+            {{@if (type==="redemption")}}
+            <em class="icon-redemption">换购</em>
+            {{else}}
+            <span class="s-checkbox J_CheckBoxItem"></span>
+            {{/if}}
+            {{/if}}
+            {{else}}
+            {{@if (type==="ju11")}}
+            <a class="icon-ju11" title="该商品为聚划算宝贝，目前正在预热，显示商品原价，暂时无法购买，开团后可恢复正常购买！" href="javascript: void(0);">聚划算</a>
+            {{else}}
+            <a class="icon-invalid" title="商品被下架、删除、库存不足，或商家处于被监管或冻结状态" target="_blank"
+               href="http://service.taobao.com/support/knowledge-1116245.htm">invalid</a>
+            {{/if}}
+            {{/if}}
+        </div>
+    </div>
+    <div class="td td-item">
+        <div class="td-inner">
+            <div class="item-pic cart-pic s70 J_ItemPic">
+                <a href="{{url}}" target="_blank" class="J_MakePoint" data-point="tbcart.8.12">
+                    {{@if (pic==="")}}
+                    <img src="http://a.tbcdn.cn/app/tc/img/nopic_s50.gif" class="itempic J_ItemImg" />
+                    {{else}}
+                    <img src="http://a.tbcdn.cn/s.gif" lazyload="{{pic}}_80x80.jpg" class="itempic J_ItemImg" />
+                    {{/if}}
+                </a>
+            </div>
+            <div class="item-info">
+                <a href="{{url}}" target="_blank" class="item-title J_MakePoint" data-point="tbcart.8.11" />{{title}}</a>
+                {{#if (skus)}}
+                <div class="item-props">
+                    {{#each (skus)}}<span>{{this}}</span>{{/each}}
+                </div>
+                {{/if}}
+                {{#if (type==="combo" || type==="campaign" || orderType==="act" || orderType==="combo")}}
+                <div class="shop-info">
+                    {{#if (shopName)}}
+                    <a title="{{shopName}}" class="shop-title J_MakePoint" data-point="tbcart.8.15" target="_blank" href="{{shopUrl}}">{{shopName}}</a>
+                    {{/if}}
+                    {{#if (host!=="C")}}<span class="host-icon icon-{{host}}"></span>{{/if}}
+                    <span class="J_WangWang" data-icon="small" data-nick="{{seller}}" data-display="inline"></span>
+                </div>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+    <div class="td td-price">
+        <div class="td-inner">
+            <div class="item-price">
+                {{#if (price.now<price.origin)}}
+                <div class="price-line"><em class="price-original">{{price.origin_str}}</em></div>
+                {{/if}}
+                <div class="price-line"><em class="price-now" tabindex="0">{{price.now_str}}</em></div>
+                {{#if (isValid)}}
+                {{#if (promotions && promotions.type)}}
+                {{#if (promotions.hideTitle===false)}}
+                <div class="promo-main promo-{{promotions.type}}">
+                    <div class="promo-content {{#if (promotions.endTime)}} promo-limited {{/if}}">
+                        {{promotions.name}}
+                    </div>
+                </div>
+                {{/if}}
+                {{/if}}
+                {{/if}}
+            </div>
+        </div>
+    </div>
+    <div class="td td-amount">
+        <div class="td-inner">
+            {{@if (type==="combo" || type==="redemption" || orderType==="combo")}}
+            {{amount.now}}
+            {{else}}
+            <div class="item-amount {{#if (isValid && amount.max<=3 && type==="redemption")}} s-lack {{/if}}">
+            {{@if (isValid && type!=="redemption")}}
+            <input type="text" value="{{amount.now}}" class="text text-amount J_ItemAmount" data-max="{{amount.max}}" data-now="{{amount.now}}" autocomplete="off" />
+            {{else}}
+            {{amount.now}}
+            {{/if}}
+        </div>
+        {{#if (isValid)}}
+        <div class="amount-msg J_AmountMsg">
+            {{@if (amount.max<1)}}
+            <em class="error-msg">该宝贝库存不足,请联系卖家</em>
+            {{else}}
+            {{@if (amount.max<amount.now)}}
+            <em class="error-msg">最多只能购买{{amount.max}}件</em>
+            {{else}}
+            {{@if (amount.limit<=amount.max)}}
+            <em class="s-danger-text">限购{{amount.limit}}件</em>
+            {{else}}
+            {{@if (amount.max<=3)}}
+            <em class="s-danger-text" title="该商品只有{{amount.max}}件了哦，要买的赶紧啊">库存紧张</em>
+            {{else}}
+            {{#if (amount.supply<amount.demand)}}
+            <em class="error-msg" title="该商品只有{{amount.supply}}件了哦，但是有{{amount.demand}}人已经加入购物车打算购买">库存紧张</em>
+            {{/if}}
+            {{/if}}
+            {{/if}}
+            {{/if}}
+            {{/if}}
+        </div>
+        {{/if}}
+        {{/if}}
+    </div>
+</div>
+<div class="td td-sum">
+    <div class="td-inner">
+        <em tabindex="0" class="number">{{price.sum_str}}</em>
+    </div>
+</div>
+</div>
+<div class="item-operations J_ItemOps">
+    <a title="移至收藏夹" class="btn-item-fav J_Fav J_MakePoint"  data-point-url="http://www.atpanel.com/jsclick?cache={{randomNum}}1&mycart=collect" href="#">移入收藏夹</a>
+    <a href="javascript:;" data-point-url="http://www.atpanel.com/jsclick?cache={{randomNum}}2&cartlist=delete" class="btn-item-del J_Del J_MakePoint">删除</a>
+</div>
+{{#if (services)}}
+<div class="item-services {{#if (model && model.serviceCollapsed!==false)}} services-collapsed {{/if}}">
+    <div class="service-wp">
+        <span class="service-header">售后服务</span>
+        <ul class="services-list">
+            {{#each (services)}}
+            <li class="service-list table {{#if (collapseShow)}}collapse-show{{/if}}">
+                <div class="td td-item service-name">
+                    <div class="item-info"><img class="service-icon" src="{{icon}}" alt="{{title}}" /><a class="service-title J_MakePoint" href="{{url}}" data-point="tbcart.8.27" target="_blank">{{title}}</a></div>
+                </div>
+                <div class="td td-price"><span class="price">{{@if (promo)}}{{promo}}{{else}}{{price_str}}{{/if}}</span></div>
+                <div class="td td-amount service-amount"><span class="number">{{quantity}}</span></div>
+                <div class="td td-sum service-sum"><span class="price">{{sum_str}}</span></div>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+</div>
+{{/if}}
+</div>

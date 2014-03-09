@@ -29,24 +29,85 @@ after(function(){
     removeDistDir();
 });
 
-describe('compile', function(){
+['1.4.1', '1.5.0'].forEach(function(version){
+    describe('compile using KISSY ' + version, function(){
 
-    var compiler = new XTemplate();
-
-    describe('compileSync', function(){
-        compiler.compileSync(srcPath, destPath);
-
-        var destA = path.resolve(destPath, './a-xtpl.js');
-        var destB = path.resolve(destPath, './b-xtpl.js');
-        it('should have proper file generated', function(){
-            fs.existsSync(destA).should.equal(true);
-            fs.existsSync(destB).should.equal(true);
+//        var version = '1.4.1';
+        var compiler = new XTemplate({
+            version: version
         });
 
-        it('should have proper file content generated', function(){
-            fs.readFileSync(destA).toString().should.equal(fs.readFileSync(path.resolve(expectedPath, './a-xtpl.js')).toString());
-            fs.readFileSync(destB).toString().should.equal(fs.readFileSync(path.resolve(expectedPath, './b-xtpl.js')).toString());
+        describe('compileSync', function(){
+            var inputPath = path.resolve(srcPath, version);
+            var outputPath = path.resolve(destPath, version);
+            compiler.compileSync(inputPath, outputPath);
+
+            var destA = path.resolve(outputPath, './a-xtpl.js');
+            var destB = path.resolve(outputPath, './b-xtpl.js');
+            it('should have proper file generated', function(){
+                fs.existsSync(destA).should.equal(true);
+                fs.existsSync(destB).should.equal(true);
+            });
+
+            it('should have proper file content generated', function(){
+                fs.readFileSync(destA).toString().should.equal(fs.readFileSync(path.resolve(expectedPath, version, './a-xtpl.js')).toString());
+                fs.readFileSync(destB).toString().should.equal(fs.readFileSync(path.resolve(expectedPath, version, './b-xtpl.js')).toString());
+            });
         });
+
     });
-
 });
+
+//describe('compile using KISSY ~1.4.0', function(){
+//
+//    var version = '1.4.1';
+//    var compiler = new XTemplate({
+//        version: version
+//    });
+//
+//    describe('compileSync', function(){
+//        var inputPath = path.resolve(srcPath, version);
+//        var outputPath = path.resolve(destPath, version);
+//        compiler.compileSync(inputPath, outputPath);
+//
+//        var destA = path.resolve(outputPath, './a-xtpl.js');
+//        var destB = path.resolve(outputPath, './b-xtpl.js');
+//        it('should have proper file generated', function(){
+//            fs.existsSync(destA).should.equal(true);
+//            fs.existsSync(destB).should.equal(true);
+//        });
+//
+//        it('should have proper file content generated', function(){
+//            fs.readFileSync(destA).toString().should.equal(fs.readFileSync(path.resolve(expectedPath, version, './a-xtpl.js')).toString());
+//            fs.readFileSync(destB).toString().should.equal(fs.readFileSync(path.resolve(expectedPath, version, './b-xtpl.js')).toString());
+//        });
+//    });
+//
+//});
+//
+//describe('compile using KISSY 1.5.0', function(){
+//
+//    var version = '1.5.0';
+//    var compiler = new XTemplate({
+//        version: version
+//    });
+//
+//    describe('compileSync', function(){
+//        var inputPath = path.resolve(srcPath, version);
+//        var outputPath = path.resolve(destPath, version);
+//        compiler.compileSync(inputPath, outputPath);
+//
+//        var destA = path.resolve(outputPath, './a-xtpl.js');
+//        var destB = path.resolve(outputPath, './b-xtpl.js');
+//        it('should have proper file generated', function(){
+//            fs.existsSync(destA).should.equal(true);
+//            fs.existsSync(destB).should.equal(true);
+//        });
+//
+//        it('should have proper file content generated', function(){
+//            fs.readFileSync(destA).toString().should.equal(fs.readFileSync(path.resolve(expectedPath, version, './a-xtpl.js')).toString());
+//            fs.readFileSync(destB).toString().should.equal(fs.readFileSync(path.resolve(expectedPath, version, './b-xtpl.js')).toString());
+//        });
+//    });
+//
+//});
