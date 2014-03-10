@@ -39,3 +39,15 @@ for more information, please refer to help.
 ```
 xtemplate -h
 ```
+
+## Options
+
+```
+var XTemplate = require('kissy-xtemplate');
+var compiler = new XTemplate({
+    version: '1.5.0', // config your KISSY version
+    inputCharset: 'gbk', // your tpl src charset
+    outputCharset: 'gbk', // compiled charset
+});
+compiler.compile('xxx.xtpl.html', 'xxx.xtpl.js');
+```
