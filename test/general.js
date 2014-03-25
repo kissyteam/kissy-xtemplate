@@ -40,4 +40,10 @@ describe('config', function(){
             xtpl.cfg.version.should.equal('1.4.2');
         });
     });
+
+    describe('When type was not specified', function(){
+        it('should be xtpl', function(){
+            new XTemplate().cfg.type.should.equal('xtpl');
+        });
+    });
 });
