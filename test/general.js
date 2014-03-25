@@ -30,4 +30,14 @@ describe('config', function(){
             new XTemplate().cfg.version.should.equal('1.4.2');
         });
     });
+
+    describe('When version was specified', function(){
+        it('should set kissy version as well', function(){
+            var xtpl = new XTemplate({
+                version: '1.4.2'
+            });
+            xtpl.kissy.version.should.equal('1.42');
+            xtpl.cfg.version.should.equal('1.4.2');
+        });
+    });
 });
