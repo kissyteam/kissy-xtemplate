@@ -48,6 +48,7 @@ var compiler = new XTemplate({
     version: '1.5.0', // config your KISSY version
     inputCharset: 'gbk', // your tpl src charset
     outputCharset: 'gbk', // compiled charset
+    type: 'xtpl', // template type. default is XTemplate
 });
 compiler.compile('xxx.xtpl.html', 'xxx.xtpl.js');
 ```
