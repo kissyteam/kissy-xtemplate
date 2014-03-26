@@ -1,13 +1,13 @@
 {
     "name": "kissy-xtemplate",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "main": "./index.js",
     "description": "XTemplate compiler for KISSY",
     "author": {
         "name": "daxingplay",
         "email": "daxingplay@gmail.com"
     },
-    "homepage": "",
+    "homepage": "https://github.com/daxingplay/kissy-xtemplate",
     "keywords": [
         "xtemplate",
         "build",
