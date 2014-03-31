@@ -30,7 +30,8 @@
     "mkdirp": "",
     "lodash": "",
     "commander": "",
-    "event-stream": "~3.1.1"
+    "event-stream": "~3.1.1",
+    "node.extend": "~1.0.10"
   },
   "devDependencies": {
     "mocha": "~1.4.1",
