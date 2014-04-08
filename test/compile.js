@@ -29,6 +29,24 @@ after(function(){
     removeDistDir();
 });
 
+describe('compile empty file', function(){
+    var compiler = new XTemplate();
+
+    var inputPath = path.resolve(srcPath, './empty.html');
+    var outputPath = path.resolve(destPath, './empty.html');
+    var error = false;
+
+    try{
+        compiler.compileSync(inputPath, outputPath);
+    }catch(e){
+        error = true;
+    }
+
+    it('should not have error', function(){
+        error.should.equal(false);
+    });
+});
+
 ['1.4.1', '1.5.0'].forEach(function(version){
     describe('compile using KISSY ' + version, function(){
 
