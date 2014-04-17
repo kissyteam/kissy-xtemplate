@@ -77,7 +77,7 @@ module.exports = function(source, options, templateSettings) {
             var compile = function() {
                 log('read', tplPath);
 
-                fs.readFile(tplPath, 'utf8', function(err, jstSrc){
+                fs.readFile(tplPath, function(err, jstSrc) {
                     if (err) {
                         return error(err);
                     }
@@ -127,7 +127,7 @@ module.exports = function(source, options, templateSettings) {
                         } else {
                             return next(err);
                         }
-                    } else if (srcStat.mtime > buildStat.mtime) {
+                    } else if (srcStat.mtime > buildStat.mtime){
                         // Source has changed, compile it
                         log('modified', jsPath);
 
