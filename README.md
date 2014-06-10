@@ -52,3 +52,12 @@ var compiler = new XTemplate({
 });
 compiler.compile('xxx.xtpl.html', 'xxx.xtpl.js');
 ```
+
+## Current Supported Versions
+
+* 1.4.0
+* 1.4.1
+* 1.4.2
+* 1.5.0
+* 5.0.0-alpha.1
+* 5.0.0-alpha.2
