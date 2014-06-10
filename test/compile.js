@@ -47,7 +47,7 @@ describe('compile empty file', function(){
     });
 });
 
-['1.4.1', '1.5.0'].forEach(function(version){
+['1.4.1', '1.5.0', '5.0.0-alpha.1'].forEach(function(version){
     describe('compile using KISSY ' + version, function(){
 
 //        var version = '1.4.1';

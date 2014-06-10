@@ -1,10 +1,10 @@
 /** Compiled By KISSY-XTemplate */
 KISSY.add(function (S, require, exports, module) {
         /*jshint quotmark:false, loopfunc:true, indent:false, asi:true, unused:false, boss:true, sub:true*/
-        var t = function (scope, buffer, payload, undefined) {
-            var engine = this,
-                nativeCommands = engine.nativeCommands,
-                utils = engine.utils;
+        var a = function (scope, buffer, undefined) {
+            var tpl = this,
+                nativeCommands = tpl.root.nativeCommands,
+                utils = tpl.root.utils;
             var callFnUtil = utils["callFn"],
                 callCommandUtil = utils["callCommand"],
                 eachCommand = nativeCommands["each"],
@@ -35,7 +35,7 @@ KISSY.add(function (S, require, exports, module) {
                 buffer.write('item-with-services', 0);
                 return buffer;
             };
-            buffer = ifCommand.call(engine, scope, option2, buffer, 1, payload);
+            buffer = ifCommand.call(tpl, scope, option2, buffer, 1);
             buffer.write(' ', 0);
             var option5 = {
                 escape: 1
@@ -48,7 +48,7 @@ KISSY.add(function (S, require, exports, module) {
                 buffer.write('first-item', 0);
                 return buffer;
             };
-            buffer = ifCommand.call(engine, scope, option5, buffer, 1, payload);
+            buffer = ifCommand.call(tpl, scope, option5, buffer, 1);
             buffer.write(' ', 0);
             var option8 = {
                 escape: 1
@@ -61,7 +61,7 @@ KISSY.add(function (S, require, exports, module) {
                 buffer.write(' last-item ', 0);
                 return buffer;
             };
-            buffer = ifCommand.call(engine, scope, option8, buffer, 1, payload);
+            buffer = ifCommand.call(tpl, scope, option8, buffer, 1);
             buffer.write(' ', 0);
             var option11 = {
                 escape: 1
@@ -83,7 +83,7 @@ KISSY.add(function (S, require, exports, module) {
                 buffer.write(' item-invalid ', 0);
                 return buffer;
             };
-            buffer = ifCommand.call(engine, scope, option11, buffer, 1, payload);
+            buffer = ifCommand.call(tpl, scope, option11, buffer, 1);
             buffer.write(' ', 0);
             var option18 = {
                 escape: 1
@@ -101,7 +101,7 @@ KISSY.add(function (S, require, exports, module) {
                 buffer.write(' selected item-selected ', 0);
                 return buffer;
             };
-            buffer = ifCommand.call(engine, scope, option18, buffer, 1, payload);
+            buffer = ifCommand.call(tpl, scope, option18, buffer, 1);
             buffer.write('">\n<div class="item-content table">\n    <div class="td td-chk">\n        <div class="td-inner">\n            ', 0);
             var option23 = {
                 escape: 1
@@ -151,11 +151,11 @@ KISSY.add(function (S, require, exports, module) {
                         buffer.write('\n            <span class="s-checkbox J_CheckBoxItem"></span>\n            ', 0);
                         return buffer;
                     };
-                    buffer = ifCommand.call(engine, scope, option33, buffer, 8, payload);
+                    buffer = ifCommand.call(tpl, scope, option33, buffer, 8);
                     buffer.write('\n            ', 0);
                     return buffer;
                 };
-                buffer = ifCommand.call(engine, scope, option26, buffer, 6, payload);
+                buffer = ifCommand.call(tpl, scope, option26, buffer, 6);
                 buffer.write('\n            ', 0);
                 return buffer;
             };
@@ -178,11 +178,11 @@ KISSY.add(function (S, require, exports, module) {
                     buffer.write('\n            <a class="icon-invalid" title="商品被下架、删除、库存不足，或商家处于被监管或冻结状态" target="_blank"\n               href="http://service.taobao.com/support/knowledge-1116245.htm">invalid</a>\n            ', 0);
                     return buffer;
                 };
-                buffer = ifCommand.call(engine, scope, option37, buffer, 15, payload);
+                buffer = ifCommand.call(tpl, scope, option37, buffer, 15);
                 buffer.write('\n            ', 0);
                 return buffer;
             };
-            buffer = ifCommand.call(engine, scope, option23, buffer, 5, payload);
+            buffer = ifCommand.call(tpl, scope, option23, buffer, 5);
             buffer.write('\n        </div>\n    </div>\n    <div class="td td-item">\n        <div class="td-inner">\n            <div class="item-pic cart-pic s70 J_ItemPic">\n                <a href="', 0);
             var id41 = scope.resolve(["url"], 0);
             buffer.write(id41, true);
@@ -207,7 +207,7 @@ KISSY.add(function (S, require, exports, module) {
                 buffer.write('_80x80.jpg" class="itempic J_ItemImg" />\n                    ', 0);
                 return buffer;
             };
-            buffer = ifCommand.call(engine, scope, option42, buffer, 28, payload);
+            buffer = ifCommand.call(tpl, scope, option42, buffer, 28);
             buffer.write('\n                </a>\n            </div>\n            <div class="item-info">\n                <a href="', 0);
             var id47 = scope.resolve(["url"], 0);
             buffer.write(id47, true);
@@ -238,11 +238,11 @@ KISSY.add(function (S, require, exports, module) {
                     buffer.write('</span>', 0);
                     return buffer;
                 };
-                buffer = eachCommand.call(engine, scope, option52, buffer, 39, payload);
+                buffer = eachCommand.call(tpl, scope, option52, buffer, 39);
                 buffer.write('\n                </div>\n                ', 0);
                 return buffer;
             };
-            buffer = ifCommand.call(engine, scope, option49, buffer, 37, payload);
+            buffer = ifCommand.call(tpl, scope, option49, buffer, 37);
             buffer.write('\n                ', 0);
             var option56 = {
                 escape: 1
@@ -296,7 +296,7 @@ KISSY.add(function (S, require, exports, module) {
                     buffer.write('</a>\n                    ', 0);
                     return buffer;
                 };
-                buffer = ifCommand.call(engine, scope, option69, buffer, 44, payload);
+                buffer = ifCommand.call(tpl, scope, option69, buffer, 44);
                 buffer.write('\n                    ', 0);
                 var option75 = {
                     escape: 1
@@ -314,14 +314,14 @@ KISSY.add(function (S, require, exports, module) {
                     buffer.write('"></span>', 0);
                     return buffer;
                 };
-                buffer = ifCommand.call(engine, scope, option75, buffer, 47, payload);
+                buffer = ifCommand.call(tpl, scope, option75, buffer, 47);
                 buffer.write('\n                    <span class="J_WangWang" data-icon="small" data-nick="', 0);
                 var id80 = scope.resolve(["seller"], 0);
                 buffer.write(id80, true);
                 buffer.write('" data-display="inline"></span>\n                </div>\n                ', 0);
                 return buffer;
             };
-            buffer = ifCommand.call(engine, scope, option56, buffer, 42, payload);
+            buffer = ifCommand.call(tpl, scope, option56, buffer, 42);
             buffer.write('\n            </div>\n        </div>\n    </div>\n    <div class="td td-price">\n        <div class="td-inner">\n            <div class="item-price">\n                ', 0);
             var option81 = {
                 escape: 1
@@ -340,7 +340,7 @@ KISSY.add(function (S, require, exports, module) {
                 buffer.write('</em></div>\n                ', 0);
                 return buffer;
             };
-            buffer = ifCommand.call(engine, scope, option81, buffer, 57, payload);
+            buffer = ifCommand.call(tpl, scope, option81, buffer, 57);
             buffer.write('\n                <div class="price-line"><em class="price-now" tabindex="0">', 0);
             var id87 = scope.resolve(["price", "now_str"], 0);
             buffer.write(id87, true);
@@ -393,22 +393,22 @@ KISSY.add(function (S, require, exports, module) {
                             buffer.write(' promo-limited ', 0);
                             return buffer;
                         };
-                        buffer = ifCommand.call(engine, scope, option101, buffer, 65, payload);
+                        buffer = ifCommand.call(tpl, scope, option101, buffer, 65);
                         buffer.write('">\n                        ', 0);
                         var id104 = scope.resolve(["promotions", "name"], 0);
                         buffer.write(id104, true);
                         buffer.write('\n                    </div>\n                </div>\n                ', 0);
                         return buffer;
                     };
-                    buffer = ifCommand.call(engine, scope, option96, buffer, 63, payload);
+                    buffer = ifCommand.call(tpl, scope, option96, buffer, 63);
                     buffer.write('\n                ', 0);
                     return buffer;
                 };
-                buffer = ifCommand.call(engine, scope, option91, buffer, 62, payload);
+                buffer = ifCommand.call(tpl, scope, option91, buffer, 62);
                 buffer.write('\n                ', 0);
                 return buffer;
             };
-            buffer = ifCommand.call(engine, scope, option88, buffer, 61, payload);
+            buffer = ifCommand.call(tpl, scope, option88, buffer, 61);
             buffer.write('\n            </div>\n        </div>\n    </div>\n    <div class="td td-amount">\n        <div class="td-inner">\n            ', 0);
             var option105 = {
                 escape: 1
@@ -467,7 +467,7 @@ KISSY.add(function (S, require, exports, module) {
                     buffer.write(' s-lack ', 0);
                     return buffer;
                 };
-                buffer = ifCommand.call(engine, scope, option116, buffer, 80, payload);
+                buffer = ifCommand.call(tpl, scope, option116, buffer, 80);
                 buffer.write('">\n            ', 0);
                 var option125 = {
                     escape: 1
@@ -503,7 +503,7 @@ KISSY.add(function (S, require, exports, module) {
                     buffer.write('\n            ', 0);
                     return buffer;
                 };
-                buffer = ifCommand.call(engine, scope, option125, buffer, 81, payload);
+                buffer = ifCommand.call(tpl, scope, option125, buffer, 81);
                 buffer.write('\n        </div>\n        ', 0);
                 var option135 = {
                     escape: 1
@@ -605,31 +605,31 @@ KISSY.add(function (S, require, exports, module) {
                                         buffer.write('人已经加入购物车打算购买">库存紧张</em>\n            ', 0);
                                         return buffer;
                                     };
-                                    buffer = ifCommand.call(engine, scope, option159, buffer, 101, payload);
+                                    buffer = ifCommand.call(tpl, scope, option159, buffer, 101);
                                     buffer.write('\n            ', 0);
                                     return buffer;
                                 };
-                                buffer = ifCommand.call(engine, scope, option154, buffer, 98, payload);
+                                buffer = ifCommand.call(tpl, scope, option154, buffer, 98);
                                 buffer.write('\n            ', 0);
                                 return buffer;
                             };
-                            buffer = ifCommand.call(engine, scope, option148, buffer, 95, payload);
+                            buffer = ifCommand.call(tpl, scope, option148, buffer, 95);
                             buffer.write('\n            ', 0);
                             return buffer;
                         };
-                        buffer = ifCommand.call(engine, scope, option142, buffer, 92, payload);
+                        buffer = ifCommand.call(tpl, scope, option142, buffer, 92);
                         buffer.write('\n            ', 0);
                         return buffer;
                     };
-                    buffer = ifCommand.call(engine, scope, option138, buffer, 89, payload);
+                    buffer = ifCommand.call(tpl, scope, option138, buffer, 89);
                     buffer.write('\n        </div>\n        ', 0);
                     return buffer;
                 };
-                buffer = ifCommand.call(engine, scope, option135, buffer, 87, payload);
+                buffer = ifCommand.call(tpl, scope, option135, buffer, 87);
                 buffer.write('\n        ', 0);
                 return buffer;
             };
-            buffer = ifCommand.call(engine, scope, option105, buffer, 77, payload);
+            buffer = ifCommand.call(tpl, scope, option105, buffer, 77);
             buffer.write('\n    </div>\n</div>\n<div class="td td-sum">\n    <div class="td-inner">\n        <em tabindex="0" class="number">', 0);
             var id166 = scope.resolve(["price", "sum_str"], 0);
             buffer.write(id166, true);
@@ -667,7 +667,7 @@ KISSY.add(function (S, require, exports, module) {
                     buffer.write(' services-collapsed ', 0);
                     return buffer;
                 };
-                buffer = ifCommand.call(engine, scope, option172, buffer, 124, payload);
+                buffer = ifCommand.call(tpl, scope, option172, buffer, 124);
                 buffer.write('">\n    <div class="service-wp">\n        <span class="service-header">售后服务</span>\n        <ul class="services-list">\n            ', 0);
                 var option178 = {
                     escape: 1
@@ -689,7 +689,7 @@ KISSY.add(function (S, require, exports, module) {
                         buffer.write('collapse-show', 0);
                         return buffer;
                     };
-                    buffer = ifCommand.call(engine, scope, option181, buffer, 129, payload);
+                    buffer = ifCommand.call(tpl, scope, option181, buffer, 129);
                     buffer.write('">\n                <div class="td td-item service-name">\n                    <div class="item-info"><img class="service-icon" src="', 0);
                     var id184 = scope.resolve(["icon"], 0);
                     buffer.write(id184, true);
@@ -724,7 +724,7 @@ KISSY.add(function (S, require, exports, module) {
                         buffer.write('', 0);
                         return buffer;
                     };
-                    buffer = ifCommand.call(engine, scope, option188, buffer, 133, payload);
+                    buffer = ifCommand.call(tpl, scope, option188, buffer, 133);
                     buffer.write('</span></div>\n                <div class="td td-amount service-amount"><span class="number">', 0);
                     var id193 = scope.resolve(["quantity"], 0);
                     buffer.write(id193, true);
@@ -734,14 +734,15 @@ KISSY.add(function (S, require, exports, module) {
                     buffer.write('</span></div>\n            </li>\n            ', 0);
                     return buffer;
                 };
-                buffer = eachCommand.call(engine, scope, option178, buffer, 128, payload);
+                buffer = eachCommand.call(tpl, scope, option178, buffer, 128);
                 buffer.write('\n        </ul>\n    </div>\n</div>\n', 0);
                 return buffer;
             };
-            buffer = ifCommand.call(engine, scope, option169, buffer, 123, payload);
+            buffer = ifCommand.call(tpl, scope, option169, buffer, 123);
             buffer.write('\n</div>', 0);
             return buffer;
         };
-t.TPL_NAME = module.name;
-return t;
+a.TPL_NAME = module.name;
+a.version = "5.0.0";
+return a
 });

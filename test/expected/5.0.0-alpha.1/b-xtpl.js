@@ -1,10 +1,10 @@
 /** Compiled By KISSY-XTemplate */
 KISSY.add(function (S, require, exports, module) {
         /*jshint quotmark:false, loopfunc:true, indent:false, asi:true, unused:false, boss:true, sub:true*/
-        var t = function (scope, buffer, payload, undefined) {
-            var engine = this,
-                nativeCommands = engine.nativeCommands,
-                utils = engine.utils;
+        var b = function (scope, buffer, undefined) {
+            var tpl = this,
+                nativeCommands = tpl.root.nativeCommands,
+                utils = tpl.root.utils;
             var callFnUtil = utils["callFn"],
                 callCommandUtil = utils["callCommand"],
                 eachCommand = nativeCommands["each"],
@@ -45,7 +45,7 @@ KISSY.add(function (S, require, exports, module) {
                     buffer.write(' order-invalid ', 0);
                     return buffer;
                 };
-                buffer = ifCommand.call(engine, scope, option5, buffer, 3, payload);
+                buffer = ifCommand.call(tpl, scope, option5, buffer, 3);
                 buffer.write('">\n    <div class="J_ItemHead shop clearfix">\n        ', 0);
                 var option9 = {
                     escape: 1
@@ -62,7 +62,7 @@ KISSY.add(function (S, require, exports, module) {
                     buffer.write('\n        <span class="act-status">套餐已失效</span>\n        ', 0);
                     return buffer;
                 };
-                buffer = ifCommand.call(engine, scope, option9, buffer, 5, payload);
+                buffer = ifCommand.call(tpl, scope, option9, buffer, 5);
                 buffer.write('\n        ', 0);
                 var option12 = {
                     escape: 1
@@ -80,7 +80,7 @@ KISSY.add(function (S, require, exports, module) {
                     buffer.write('"></span>', 0);
                     return buffer;
                 };
-                buffer = ifCommand.call(engine, scope, option12, buffer, 10, payload);
+                buffer = ifCommand.call(tpl, scope, option12, buffer, 10);
                 buffer.write('\n        <span class="act-name" title="', 0);
                 var id17 = scope.resolve(["title"], 0);
                 buffer.write(id17, true);
@@ -133,7 +133,7 @@ KISSY.add(function (S, require, exports, module) {
                             buffer.write('', 0);
                             return buffer;
                         };
-                        buffer = ifCommand.call(engine, scope, option26, buffer, 17, payload);
+                        buffer = ifCommand.call(tpl, scope, option26, buffer, 17);
                         buffer.write('"\n                 class="bundle ', 0);
                         var option32 = {
                             escape: 1
@@ -151,7 +151,7 @@ KISSY.add(function (S, require, exports, module) {
                             buffer.write(' bundle-last ', 0);
                             return buffer;
                         };
-                        buffer = ifCommand.call(engine, scope, option32, buffer, 18, payload);
+                        buffer = ifCommand.call(tpl, scope, option32, buffer, 18);
                         buffer.write('">\n                ', 0);
                         var option38 = {
                             escape: 1
@@ -176,19 +176,19 @@ KISSY.add(function (S, require, exports, module) {
                                 buffer.write('"></div>\n                ', 0);
                                 return buffer;
                             };
-                            buffer = eachCommand.call(engine, scope, option41, buffer, 20, payload);
+                            buffer = eachCommand.call(tpl, scope, option41, buffer, 20);
                             buffer.write('\n                ', 0);
                             return buffer;
                         };
-                        buffer = ifCommand.call(engine, scope, option38, buffer, 19, payload);
+                        buffer = ifCommand.call(tpl, scope, option38, buffer, 19);
                         buffer.write('\n            </div>\n            ', 0);
                         return buffer;
                     };
-                    buffer = eachCommand.call(engine, scope, option23, buffer, 16, payload);
+                    buffer = eachCommand.call(tpl, scope, option23, buffer, 16);
                     buffer.write('\n            ', 0);
                     return buffer;
                 };
-                buffer = ifCommand.call(engine, scope, option20, buffer, 15, payload);
+                buffer = ifCommand.call(tpl, scope, option20, buffer, 15);
                 buffer.write('\n        </div>\n        <div class="item-operations J_ComboOp">\n            <a href="javascript:void(0);" class="btn-item-del J_ComboDel J_MakePoint">删除</a>\n        </div>\n    </div>\n</div>\n', 0);
                 return buffer;
             };
@@ -221,7 +221,7 @@ KISSY.add(function (S, require, exports, module) {
                         buffer.write(' order-invalid ', 0);
                         return buffer;
                     };
-                    buffer = ifCommand.call(engine, scope, option50, buffer, 36, payload);
+                    buffer = ifCommand.call(tpl, scope, option50, buffer, 36);
                     buffer.write('">\n    <div class="J_ItemHead shop clearfix ', 0);
                     var option54 = {
                         escape: 1
@@ -234,7 +234,7 @@ KISSY.add(function (S, require, exports, module) {
                         buffer.write(' disable', 0);
                         return buffer;
                     };
-                    buffer = ifCommand.call(engine, scope, option54, buffer, 37, payload);
+                    buffer = ifCommand.call(tpl, scope, option54, buffer, 37);
                     buffer.write('">\n        <div class="shop-info">\n            ', 0);
                     var option57 = {
                         escape: 1
@@ -251,7 +251,7 @@ KISSY.add(function (S, require, exports, module) {
                         buffer.write('\n            <span class="act-status">活动已失效</span>\n            ', 0);
                         return buffer;
                     };
-                    buffer = ifCommand.call(engine, scope, option57, buffer, 39, payload);
+                    buffer = ifCommand.call(tpl, scope, option57, buffer, 39);
                     buffer.write('\n            <a href="', 0);
                     var id60 = scope.resolve(["url"], 0);
                     buffer.write(id60, true);
@@ -285,11 +285,11 @@ KISSY.add(function (S, require, exports, module) {
                             buffer.write('</li>\n                    ', 0);
                             return buffer;
                         };
-                        buffer = eachCommand.call(engine, scope, option66, buffer, 50, payload);
+                        buffer = eachCommand.call(tpl, scope, option66, buffer, 50);
                         buffer.write('\n                </ul>\n            </div>\n            <span class="pipe-left"></span><span class="pipe-right"></span>\n        </div>\n        ', 0);
                         return buffer;
                     };
-                    buffer = ifCommand.call(engine, scope, option63, buffer, 46, payload);
+                    buffer = ifCommand.call(tpl, scope, option63, buffer, 46);
                     buffer.write('\n    </div>\n    <div class="order-content">\n        <div id="J_BundleList_', 0);
                     var id70 = scope.resolve(["uniqueId"], 0);
                     buffer.write(id70, true);
@@ -336,7 +336,7 @@ KISSY.add(function (S, require, exports, module) {
                                 buffer.write('', 0);
                                 return buffer;
                             };
-                            buffer = ifCommand.call(engine, scope, option77, buffer, 63, payload);
+                            buffer = ifCommand.call(tpl, scope, option77, buffer, 63);
                             buffer.write('"\n                 class="bundle ', 0);
                             var option83 = {
                                 escape: 1
@@ -354,7 +354,7 @@ KISSY.add(function (S, require, exports, module) {
                                 buffer.write(' bundle-last ', 0);
                                 return buffer;
                             };
-                            buffer = ifCommand.call(engine, scope, option83, buffer, 64, payload);
+                            buffer = ifCommand.call(tpl, scope, option83, buffer, 64);
                             buffer.write('">\n                ', 0);
                             var option89 = {
                                 escape: 1
@@ -379,19 +379,19 @@ KISSY.add(function (S, require, exports, module) {
                                     buffer.write('"></div>\n                ', 0);
                                     return buffer;
                                 };
-                                buffer = eachCommand.call(engine, scope, option92, buffer, 66, payload);
+                                buffer = eachCommand.call(tpl, scope, option92, buffer, 66);
                                 buffer.write('\n                ', 0);
                                 return buffer;
                             };
-                            buffer = ifCommand.call(engine, scope, option89, buffer, 65, payload);
+                            buffer = ifCommand.call(tpl, scope, option89, buffer, 65);
                             buffer.write('\n            </div>\n            ', 0);
                             return buffer;
                         };
-                        buffer = eachCommand.call(engine, scope, option74, buffer, 62, payload);
+                        buffer = eachCommand.call(tpl, scope, option74, buffer, 62);
                         buffer.write('\n            ', 0);
                         return buffer;
                     };
-                    buffer = ifCommand.call(engine, scope, option71, buffer, 61, payload);
+                    buffer = ifCommand.call(tpl, scope, option71, buffer, 61);
                     buffer.write('\n        </div>\n        ', 0);
                     var option96 = {
                         escape: 1
@@ -407,7 +407,7 @@ KISSY.add(function (S, require, exports, module) {
                         buffer.write('\n                </p>\n            </div>\n        </div>\n        ', 0);
                         return buffer;
                     };
-                    buffer = ifCommand.call(engine, scope, option96, buffer, 74, payload);
+                    buffer = ifCommand.call(tpl, scope, option96, buffer, 74);
                     buffer.write('\n    </div>\n</div>\n', 0);
                     return buffer;
                 };
@@ -427,7 +427,7 @@ KISSY.add(function (S, require, exports, module) {
                         buffer.write('order-redemption', 0);
                         return buffer;
                     };
-                    buffer = ifCommand.call(engine, scope, option101, buffer, 87, payload);
+                    buffer = ifCommand.call(tpl, scope, option101, buffer, 87);
                     buffer.write(' ', 0);
                     var option104 = {
                         escape: 1
@@ -442,7 +442,7 @@ KISSY.add(function (S, require, exports, module) {
                         buffer.write(' order-invalid ', 0);
                         return buffer;
                     };
-                    buffer = ifCommand.call(engine, scope, option104, buffer, 87, payload);
+                    buffer = ifCommand.call(tpl, scope, option104, buffer, 87);
                     buffer.write('">\n    <div class="J_ItemHead shop clearfix">\n        <div class="shop-info">\n            ', 0);
                     var option108 = {
                         escape: 1
@@ -455,7 +455,7 @@ KISSY.add(function (S, require, exports, module) {
                         buffer.write('<span class="s-checkbox J_forShop"></span>', 0);
                         return buffer;
                     };
-                    buffer = ifCommand.call(engine, scope, option108, buffer, 90, payload);
+                    buffer = ifCommand.call(tpl, scope, option108, buffer, 90);
                     buffer.write('\n            ', 0);
                     var option111 = {
                         escape: 1
@@ -473,7 +473,7 @@ KISSY.add(function (S, require, exports, module) {
                         buffer.write('"></span>', 0);
                         return buffer;
                     };
-                    buffer = ifCommand.call(engine, scope, option111, buffer, 91, payload);
+                    buffer = ifCommand.call(tpl, scope, option111, buffer, 91);
                     buffer.write('\n            ', 0);
                     var option116 = {
                         escape: 1
@@ -508,7 +508,7 @@ KISSY.add(function (S, require, exports, module) {
                         buffer.write('</a>\n            ', 0);
                         return buffer;
                     };
-                    buffer = ifCommand.call(engine, scope, option116, buffer, 92, payload);
+                    buffer = ifCommand.call(tpl, scope, option116, buffer, 92);
                     buffer.write('\n        </div>\n        ', 0);
                     var option125 = {
                         escape: 1
@@ -533,11 +533,11 @@ KISSY.add(function (S, require, exports, module) {
                             buffer.write('\n                    ', 0);
                             return buffer;
                         };
-                        buffer = eachCommand.call(engine, scope, option128, buffer, 102, payload);
+                        buffer = eachCommand.call(tpl, scope, option128, buffer, 102);
                         buffer.write('\n                </ul>\n            </div>\n        </div>\n        ', 0);
                         return buffer;
                     };
-                    buffer = ifCommand.call(engine, scope, option125, buffer, 98, payload);
+                    buffer = ifCommand.call(tpl, scope, option125, buffer, 98);
                     buffer.write('\n    </div>\n    <div class="order-content">\n        <div id="J_BundleList_', 0);
                     var id132 = scope.resolve(["uniqueId"], 0);
                     buffer.write(id132, true);
@@ -584,7 +584,7 @@ KISSY.add(function (S, require, exports, module) {
                                 buffer.write('', 0);
                                 return buffer;
                             };
-                            buffer = ifCommand.call(engine, scope, option139, buffer, 114, payload);
+                            buffer = ifCommand.call(tpl, scope, option139, buffer, 114);
                             buffer.write('"\n                 class="bundle ', 0);
                             var option145 = {
                                 escape: 1
@@ -602,7 +602,7 @@ KISSY.add(function (S, require, exports, module) {
                                 buffer.write(' bundle-last ', 0);
                                 return buffer;
                             };
-                            buffer = ifCommand.call(engine, scope, option145, buffer, 115, payload);
+                            buffer = ifCommand.call(tpl, scope, option145, buffer, 115);
                             buffer.write('">\n                ', 0);
                             var option151 = {
                                 escape: 1
@@ -627,19 +627,19 @@ KISSY.add(function (S, require, exports, module) {
                                     buffer.write('"></div>\n                ', 0);
                                     return buffer;
                                 };
-                                buffer = eachCommand.call(engine, scope, option154, buffer, 117, payload);
+                                buffer = eachCommand.call(tpl, scope, option154, buffer, 117);
                                 buffer.write('\n                ', 0);
                                 return buffer;
                             };
-                            buffer = ifCommand.call(engine, scope, option151, buffer, 116, payload);
+                            buffer = ifCommand.call(tpl, scope, option151, buffer, 116);
                             buffer.write('\n            </div>\n            ', 0);
                             return buffer;
                         };
-                        buffer = eachCommand.call(engine, scope, option136, buffer, 113, payload);
+                        buffer = eachCommand.call(tpl, scope, option136, buffer, 113);
                         buffer.write('\n            ', 0);
                         return buffer;
                     };
-                    buffer = ifCommand.call(engine, scope, option133, buffer, 112, payload);
+                    buffer = ifCommand.call(tpl, scope, option133, buffer, 112);
                     buffer.write('\n        </div>\n        ', 0);
                     var option158 = {
                         escape: 1
@@ -677,7 +677,7 @@ KISSY.add(function (S, require, exports, module) {
                             buffer.write('</em>件商品</div>\n                ', 0);
                             return buffer;
                         };
-                        buffer = ifCommand.call(engine, scope, option161, buffer, 128, payload);
+                        buffer = ifCommand.call(tpl, scope, option161, buffer, 128);
                         buffer.write('\n                <div class="amount">\n                    <span class="redemption-count">选中商品合计<span class="J_TotalPrice">', 0);
                         var id171 = scope.resolve(["model", "totalShopPrice"], 0);
                         buffer.write(id171, true);
@@ -698,22 +698,23 @@ KISSY.add(function (S, require, exports, module) {
                             buffer.write('entry-disabled', 0);
                             return buffer;
                         };
-                        buffer = ifCommand.call(engine, scope, option173, buffer, 134, payload);
+                        buffer = ifCommand.call(tpl, scope, option173, buffer, 134);
                         buffer.write('"\n                       href="#" hidefocus="true">马上换购<span class="arrow"></span></a>\n                </div>\n            </div>\n            <div class="redemption-list J_RedemptionList carousel"></div>\n            <div class="redemption-sku J_SkuPanel"></div>\n        </div>\n        ', 0);
                         return buffer;
                     };
-                    buffer = ifCommand.call(engine, scope, option158, buffer, 125, payload);
+                    buffer = ifCommand.call(tpl, scope, option158, buffer, 125);
                     buffer.write('\n    </div>\n</div>\n', 0);
                     return buffer;
                 };
-                buffer = ifCommand.call(engine, scope, option45, buffer, 34, payload);
+                buffer = ifCommand.call(tpl, scope, option45, buffer, 34);
                 buffer.write('\n', 0);
                 return buffer;
             };
-            buffer = ifCommand.call(engine, scope, option0, buffer, 1, payload);
+            buffer = ifCommand.call(tpl, scope, option0, buffer, 1);
             buffer.write('\n', 0);
             return buffer;
         };
-t.TPL_NAME = module.name;
-return t;
+b.TPL_NAME = module.name;
+b.version = "5.0.0";
+return b
 });
