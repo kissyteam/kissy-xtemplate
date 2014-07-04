@@ -39,7 +39,7 @@ module.exports = function(source, options, templateSettings) {
     // Parse and compile the CSS from the source string.
     var render = function(str, callback) {
         try {
-            var result = xtpl._compile(str, 'utf8', 'utf8');
+            var result = xtpl._compile(str, source, 'utf8', 'utf8');
         } catch (e) {
             return callback(err);
         }

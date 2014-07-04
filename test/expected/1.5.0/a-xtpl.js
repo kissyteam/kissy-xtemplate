@@ -1,4 +1,4 @@
-/** Compiled By KISSY-XTemplate */
+/** Compiled By KISSY-XTemplate 1.5.0 */
 KISSY.add(function (S, require, exports, module) {
         /*jshint quotmark:false, loopfunc:true, indent:false, asi:true, unused:false, boss:true, sub:true*/
         var t = function (scope, buffer, payload, undefined) {

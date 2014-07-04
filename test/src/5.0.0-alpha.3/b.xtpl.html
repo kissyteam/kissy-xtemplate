@@ -1,0 +1,145 @@
+{{@if (type==='combo')}}
+<div id="J_Order_{{uniqueId}}"
+     class="J_Order clearfix order-body combo-order J_Combo {{#if (isValid===false)}} order-invalid {{/if}}">
+    <div class="J_ItemHead shop clearfix">
+        {{@if (isValid)}}
+        <span class="s-checkbox J_forShop"></span>
+        {{else}}
+        <span class="act-status">套餐已失效</span>
+        {{/if}}
+        {{#if (host!=="C")}}<span class="icon-{{host}}"></span>{{/if}}
+        <span class="act-name" title="{{title}}">套餐：{{title}}</span>
+    </div>
+    <div class="order-content clearfix">
+        <div id="J_BundleList_{{uniqueId}}" class="item-list">
+            {{#if (bundles)}}
+            {{#each (bundles)}}
+            <div id="J_Bundle_{{@if (id)}}{{id}}{{else}}{{../uniqueId}}_{{xindex}}{{/if}}"
+                 class="bundle {{#if (xindex===xcount-1)}} bundle-last {{/if}}">
+                {{#if (orders)}}
+                {{#each (orders)}}
+                <div id="J_ItemHolder_{{cartId}}"></div>
+                {{/each}}
+                {{/if}}
+            </div>
+            {{/each}}
+            {{/if}}
+        </div>
+        <div class="item-operations J_ComboOp">
+            <a href="javascript:void(0);" class="btn-item-del J_ComboDel J_MakePoint">删除</a>
+        </div>
+    </div>
+</div>
+{{else}}
+{{@if (type==='act')}}
+<div id="J_Order_{{uniqueId}}"
+     class="J_Order clearfix order-body cross-shop-act J_CrossShopAct {{#if (isValid===false)}} order-invalid {{/if}}">
+    <div class="J_ItemHead shop clearfix {{#if (!isValid)}} disable{{/if}}">
+        <div class="shop-info">
+            {{@if (isValid)}}
+            <span class="s-checkbox J_forShop"></span>
+            {{else}}
+            <span class="act-status">活动已失效</span>
+            {{/if}}
+            <a href="{{url}}" class="act-name J_MakePoint" data-point="tbcart.8.15" target="_blank" title="{{title}}">活动：{{title}}</a>
+        </div>
+        {{#if (scrollPromos)}}
+        <div class="act-promo">
+            <div class="act-promo-wrapper">
+                <ul class="act-promo-hint J_ScrollingPromoHint">
+                    {{#each (scrollPromos)}}
+                    <li>{{campaignPlan}}</li>
+                    {{/each}}
+                </ul>
+            </div>
+            <span class="pipe-left"></span><span class="pipe-right"></span>
+        </div>
+        {{/if}}
+    </div>
+    <div class="order-content">
+        <div id="J_BundleList_{{uniqueId}}" class="item-list">
+            {{#if (bundles)}}
+            {{#each (bundles)}}
+            <div id="J_Bundle_{{@if (id)}}{{id}}{{else}}{{../uniqueId}}_{{xindex}}{{/if}}"
+                 class="bundle {{#if (xindex===xcount-1)}} bundle-last {{/if}}">
+                {{#if (orders)}}
+                {{#each (orders)}}
+                <div id="J_ItemHolder_{{cartId}}"></div>
+                {{/each}}
+                {{/if}}
+            </div>
+            {{/each}}
+            {{/if}}
+        </div>
+        {{#if (gradeMessage)}}
+        <div class="act-saveinfo">
+            <div class="msg">
+                <p class="naked tips">
+                    {{gradeMessage}}
+                </p>
+            </div>
+        </div>
+        {{/if}}
+    </div>
+</div>
+{{else}}
+<div id="J_Order_{{uniqueId}}"
+     class="J_Order clearfix order-body {{#if (extraItem)}}order-redemption{{/if}} {{#if (isValid===false)}} order-invalid {{/if}}">
+    <div class="J_ItemHead shop clearfix">
+        <div class="shop-info">
+            {{#if (isValid)}}<span class="s-checkbox J_forShop"></span>{{/if}}
+            {{#if (host!=="C")}}<span class="icon-{{host}}"></span>{{/if}}
+            {{@if (title)}}shop: <a href="{{url}}" target="_blank" title="{{title}}" class="J_MakePoint"
+                                    data-point="tbcart.8.15">{{title}}</a>
+            {{else}}卖家：<a href="{{url}}" target="_blank" title="{{seller}}" class="J_MakePoint"
+                          data-point="tbcart.8.15">{{seller}}</a>
+            {{/if}}
+        </div>
+        {{#if (scrollPromos)}}
+        <div class="order-promo-info">
+            <div class="scrolling-container">
+                <ul class="scrolling-promo-hint J_ScrollingPromoHint">
+                    {{#each (scrollPromos)}}
+                    {{{this}}}
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+        {{/if}}
+    </div>
+    <div class="order-content">
+        <div id="J_BundleList_{{uniqueId}}" class="item-list">
+            {{#if (bundles)}}
+            {{#each (bundles)}}
+            <div id="J_Bundle_{{@if (id)}}{{id}}{{else}}{{../uniqueId}}_{{xindex}}{{/if}}"
+                 class="bundle {{#if (xindex===xcount-1)}} bundle-last {{/if}}">
+                {{#if (orders)}}
+                {{#each (orders)}}
+                <div id="J_ItemHolder_{{cartId}}"></div>
+                {{/each}}
+                {{/if}}
+            </div>
+            {{/each}}
+            {{/if}}
+        </div>
+        {{#if (extraItem)}}
+        <div class="redemption-info">
+            <div class="redemption-tip clearfix">
+                {{#if (model && model.totalShopPrice && extraItem.totalExtraItemNum>extraItem.remainExtraItemNum)}}
+                <div class="remain">还可换购<em class="J_Remain number">{{extraItem.remainExtraItemNum}}</em>件商品</div>
+                {{/if}}
+                <div class="amount">
+                    <span class="redemption-count">选中商品合计<span class="J_TotalPrice">{{model.totalShopPrice}}元</span>，可换购<em
+                            class="J_TotalRedemptionAmount number">{{extraItem.totalExtraItemNum}}件</em>商品</span>
+                    <a class="J_Redemption entry {{#if (extraItem.remainExtraItemNum===0)}}entry-disabled{{/if}}"
+                       href="#" hidefocus="true">马上换购<span class="arrow"></span></a>
+                </div>
+            </div>
+            <div class="redemption-list J_RedemptionList carousel"></div>
+            <div class="redemption-sku J_SkuPanel"></div>
+        </div>
+        {{/if}}
+    </div>
+</div>
+{{/if}}
+{{/if}}
