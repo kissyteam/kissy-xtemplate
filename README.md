@@ -32,6 +32,7 @@ then, you can compile using `xtemplate` bin.
 
 ```
 xtemplate a.xtpl.html a.js
+xtemplate src/ dest/
 ```
 
 for more information, please refer to help.
@@ -61,3 +62,4 @@ compiler.compile('xxx.xtpl.html', 'xxx.xtpl.js');
 * 1.5.0
 * 5.0.0-alpha.1
 * 5.0.0-alpha.2
+* 5.0.0-alpha.10
