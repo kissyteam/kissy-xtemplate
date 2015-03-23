@@ -63,3 +63,4 @@ compiler.compile('xxx.xtpl.html', 'xxx.xtpl.js');
 * 5.0.0-alpha.1
 * 5.0.0-alpha.2
 * 5.0.0-alpha.10
+* kg-4.1.4
