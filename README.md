@@ -64,3 +64,6 @@ compiler.compile('xxx.xtpl.html', 'xxx.xtpl.js');
 * 5.0.0-alpha.2
 * 5.0.0-alpha.10
 * kg-4.1.4
+* kg-4.2.0
+* kg-4.2.1 
+    * static constraint when parameter is a static value
